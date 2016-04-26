@@ -34,6 +34,6 @@ fi
 # on tail PID and then "wait" command will interrupt on TERM (or any other)
 # signal and the script will proceed to kill_* functions which will gracefully
 # terminate child processes.
-tail -f /etc/fstab & #"$LOG_FILE" &
+tail -f /etc/fstab $DEVPI_SERVERDIR/.xproc/devpi-server/xprocess.log $LOG_FILE & #"$LOG_FILE" &
 TAIL_PID=$!
 wait $TAIL_PID
